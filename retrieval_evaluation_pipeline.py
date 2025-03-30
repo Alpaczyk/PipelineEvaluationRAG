@@ -1,5 +1,6 @@
 import json
 import os.path
+import sys
 
 import numpy as np
 import pandas as pd
@@ -103,14 +104,6 @@ class RetrievalEvaluationPipeline:
 
 
 
-if __name__ == "__main__":
-    chunk_size = 800
-    chunker = FixedTokenChunker(chunk_size=chunk_size)
-    model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-    no_retrieved_chunks = 2
-    pipeline = RetrievalEvaluationPipeline(chunker, no_retrieved_chunks, model)
-    precision_score, recall_score = pipeline.evaluate()
-    print(f"Chunk size: {chunk_size}, Number of retrieved chunks: {no_retrieved_chunks}, Precision score: {precision_score}, Recall score: {recall_score}")
 
 
 
