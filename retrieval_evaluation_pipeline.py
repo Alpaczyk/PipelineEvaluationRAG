@@ -1,12 +1,10 @@
 import json
 import os.path
-import sys
 
 import numpy as np
 import pandas as pd
 import chromadb
 
-from Chunking.fixed_token_chunker import FixedTokenChunker
 from Evaluation.evaluation import Evaluator
 from utils import rigorous_document_search
 from sentence_transformers import SentenceTransformer
